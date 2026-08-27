@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            Lon Hutt — Developer Productivity & Internal Platforms Consultant
+        </title>
+        <meta
+            name="description"
+            content="I'm a Principal engineer who fixes broken developer experience — I speed up your builds, migrate you off legacy tooling, and build the internal platforms your engineers actually want to use."
+        />
+        <meta
+            property="og:title"
+            content="Lon Hutt — Developer Productivity & Internal Platforms Consultant"
+        />
+        <meta
+            property="og:description"
+            content="I speed up your builds, migrate you off legacy tooling, and build the internal platforms your engineers actually want to use."
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="generator" content={Astro.generator} />
+    </head>
+    <body>
+        <div class="min-h-screen relative overflow-x-hidden">
+            {/* Background Grid Texture */}
+            <div
+                class="fixed inset-0 pointer-events-none z-0 opacity-40 mix-blend-multiply"
+                style="background-image: linear-gradient(to right, var(--color-line) 1px, transparent 1px), linear-gradient(to bottom, var(--color-line) 1px, transparent 1px); background-size: 32px 32px;"
+                aria-hidden="true"
+            >
+            </div>
+            <slot />
+        </div>
+    </body>
+</html>

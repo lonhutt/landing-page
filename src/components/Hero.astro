@@ -1,0 +1,63 @@
+---
+import HeroSchematic from "../components/HeroSchematic.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<section
+    id="hero"
+    class="relative z-10 bg-paper px-6 sm:px-8 py-10 sm:py-16 border-b border-line"
+>
+    <div class="max-w-[720px] mx-auto space-y-10 sm:space-y-12">
+        {/* Wordmark */}
+        <div
+            class="font-mono text-[13px] sm:text-sm font-bold tracking-widest text-ink uppercase"
+        >
+            Lon Hutt
+        </div>
+
+        <div class="-mx-2">
+            <HeroSchematic />
+        </div>
+
+        <div class="space-y-5">
+            <p
+                class="font-mono text-xs font-semibold tracking-widest text-graphite uppercase"
+            >
+                Principal Engineer &middot; Denver, CO
+            </p>
+            <h1
+                class="font-display text-4xl sm:text-5xl md:text-[64px] font-bold tracking-tight text-ink leading-[1.05]"
+            >
+                Some problems just need someone who's seen them before.
+            </h1>
+            <p
+                class="text-[17px] sm:text-[19px] md:text-xl font-medium text-graphite leading-snug"
+            >
+                The tangled legacy build, the migration nobody wants to own, the
+                platform decision that needs twenty years of experience behind
+                it — that's where I come in.
+            </p>
+            <p class="text-[15px] sm:text-base text-ink leading-relaxed">
+                My core focus is developer productivity and internal platforms,
+                but I also tackle broader senior engineering work. If a project
+                is ambiguous, highly technical, and requires experienced
+                judgment, let's talk.
+            </p>
+        </div>
+
+        <div class="pt-2">
+            <a
+                id="hero-book-call-btn"
+                href="#book-a-call"
+                class="inline-flex items-center gap-2 px-7 py-3.5 bg-signal hover:bg-signal-hover active:bg-signal-active text-white font-medium text-[15px] sm:text-base rounded-md transition-all shadow-sm hover:shadow hover:-translate-y-px group"
+            >
+                <Icon name="lucide:calendar" class="w-[18px] h-[18px]" />
+                <span>Book a call</span>
+                <Icon
+                    name="lucide:arrow-up-right"
+                    class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity ml-0.5"
+                />
+            </a>
+        </div>
+    </div>
+</section>

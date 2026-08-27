@@ -1,0 +1,84 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section
+    id="book-a-call"
+    aria-labelledby="heading-contact"
+    class="relative z-10 bg-paper px-6 sm:px-8 py-20 sm:py-24"
+>
+    <div class="max-w-[720px] mx-auto space-y-10 sm:space-y-12">
+        <h2
+            id="heading-contact"
+            class="font-mono text-[13px] font-semibold tracking-widest text-ink uppercase flex items-center gap-3"
+        >
+            <span class="text-graphite font-normal">[ 04 ]</span> Contact
+        </h2>
+
+        <div class="space-y-8">
+            <div
+                class="flex flex-col sm:flex-row flex-wrap sm:items-center gap-x-10 gap-y-5 font-mono text-sm"
+            >
+                <a
+                    href="mailto:lon@lonhutt.com"
+                    class="inline-flex items-center gap-2.5 text-ink hover:text-signal transition-colors group"
+                >
+                    <Icon
+                        name="lucide:mail"
+                        class="w-4 h-4 text-graphite group-hover:text-signal transition-colors"
+                    />
+                    <span
+                        class="underline underline-offset-4 decoration-line group-hover:decoration-signal"
+                    >
+                        lon@lonhutt.com
+                    </span>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/lon-hutt/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2.5 text-ink hover:text-signal transition-colors group"
+                >
+                    <Icon
+                        name="simple-icons:linkedin"
+                        class="w-4 h-4 text-graphite group-hover:text-signal transition-colors"
+                    />
+                    <span
+                        class="underline underline-offset-4 decoration-line group-hover:decoration-signal"
+                    >
+                        LinkedIn
+                    </span>
+                </a>
+
+                <a
+                    href="https://github.com/lonhutt"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2.5 text-ink hover:text-signal transition-colors group"
+                >
+                    <Icon
+                        name="simple-icons:github"
+                        class="w-4 h-4 text-graphite group-hover:text-signal transition-colors"
+                    />
+                    <span
+                        class="underline underline-offset-4 decoration-line group-hover:decoration-signal"
+                    >
+                        GitHub
+                    </span>
+                </a>
+            </div>
+
+            <div class="pt-2">
+                <a
+                    href="https://calendar.app.google/PLBA15iRaBQv6PPo9"
+                    target="_blank"
+                    class="inline-flex items-center gap-2 px-7 py-3.5 bg-signal hover:bg-signal-hover active:bg-signal-active text-white font-medium text-[15px] sm:text-base rounded-md transition-all shadow-sm hover:shadow hover:-translate-y-px group"
+                >
+                    <Icon name="lucide:calendar" class="w-[18px] h-[18px]" />
+                    <span>Book a call</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #EEF1F0;
+  --color-paper-alt: #E4E9E7;
+  --color-ink: #121A1E;
+  --color-graphite: #5B6B70;
+  --color-line: #C7D0CE;
+  --color-signal: #2F6FED;
+  --color-signal-hover: #255ec9;
+  --color-signal-active: #1f50ac;
+  --color-signal-dim: #DCE6FB;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+::selection {
+  background-color: var(--color-signal-dim);
+  color: var(--color-ink);
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom focus states using signal blue outline */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #2F6FED;
+  outline-offset: 3px;
+}
+
+/* Schematic Hero Animation */
+@keyframes drawPath {
+  0% {
+    stroke-dashoffset: 400;
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes resolvePipeline {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.7);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.animate-schematic-trace {
+  stroke-dasharray: 400;
+  animation: drawPath 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-schematic-signal {
+  animation: resolvePipeline 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: left center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-schematic-trace,
+  .animate-schematic-signal {
+    animation: none !important;
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

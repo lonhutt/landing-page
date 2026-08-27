@@ -1,0 +1,213 @@
+<div
+    class="w-full select-none py-1 sm:py-2"
+    aria-label="Schematic diagram: tangled build pipelines resolving into a single clean stream"
+    role="img"
+>
+    <!-- /* =========================================================================
+          MOBILE DEDICATED SCHEMATIC (< 640px)
+          Optimized aspect ratio (340x76), thicker strokes, and legible text scale
+         ========================================================================= */ -->
+    <svg
+        viewBox="0 0 340 76"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="block sm:hidden w-full h-auto overflow-visible"
+    >
+        {/* Schematic Grid Dots / Background Reference */}
+        <g opacity="0.4" class="text-line">
+            <circle cx="8" cy="20" r="1.5" fill="currentColor"></circle>
+            <circle cx="8" cy="40" r="1.5" fill="currentColor"></circle>
+            <circle cx="8" cy="60" r="1.5" fill="currentColor"></circle>
+
+            <circle cx="85" cy="20" r="1.5" fill="currentColor"></circle>
+            <circle cx="85" cy="60" r="1.5" fill="currentColor"></circle>
+
+            <circle cx="165" cy="40" r="1.5" fill="currentColor"></circle>
+            <circle cx="245" cy="40" r="1.5" fill="currentColor"></circle>
+            <circle cx="324" cy="40" r="1.5" fill="currentColor"></circle>
+        </g>
+
+        {/* Labels in monospace */}
+        <g
+            class="font-mono text-[9px] tracking-wider fill-graphite select-none font-medium"
+            opacity="0.85"
+        >
+            <text x="8" y="11">LEGACY TOOLING</text>
+            <text x="214" y="25">OPTIMIZED PIPELINE</text>
+        </g>
+
+        {/* Tangled input paths - line color (#C7D0CE) */}
+        <g
+            stroke="#C7D0CE"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+        >
+            {/* Path 1: Top weave down across center, looping and converging */}
+            <path
+                d="M 8 20 C 45 20, 40 60, 80 60 C 120 60, 125 22, 145 22 C 155 22, 160 38, 165 40"
+                class="animate-schematic-trace"
+                style={{ animationDelay: "0ms" }}></path>
+
+            {/* Path 2: Middle path with sharp friction bends */}
+            <path
+                d="M 8 40 C 35 40, 50 18, 75 28 C 100 38, 115 62, 140 54 C 152 50, 158 42, 165 40"
+                class="animate-schematic-trace"
+                style={{ animationDelay: "80ms" }}></path>
+
+            {/* Path 3: Bottom path looping up */}
+            <path
+                d="M 8 60 C 45 60, 50 20, 90 20 C 125 20, 125 60, 145 60 C 155 60, 160 42, 165 40"
+                class="animate-schematic-trace"
+                style={{ animationDelay: "160ms" }}></path>
+
+            {/* Path 4: Secondary friction trace */}
+            <path
+                d="M 8 30 C 40 30, 75 64, 110 44 C 135 30, 150 40, 165 40"
+                class="animate-schematic-trace"
+                opacity="0.6"
+                stroke-width="1.5"
+                style={{ animationDelay: "220ms" }}></path>
+        </g>
+
+        {/* Junction / Convergence Ring */}
+        <circle
+            cx="165"
+            cy="40"
+            r="4.5"
+            fill="#EEF1F0"
+            stroke="#C7D0CE"
+            stroke-width="2"
+            class="animate-schematic-trace"></circle>
+
+        {/* Resolved Straight Line - Signal Blue (#2F6FED) */}
+        <g class="animate-schematic-signal" style={{ animationDelay: "300ms" }}>
+            {/* Main clean pipeline stroke */}
+            <line
+                x1="169"
+                y1="40"
+                x2="324"
+                y2="40"
+                stroke="#2F6FED"
+                stroke-width="3"
+                stroke-linecap="round"></line>
+
+            {/* Clean terminal node */}
+            <circle cx="324" cy="40" r="5" fill="#2F6FED"></circle>
+
+            {/* Pulse ring indicator on terminal node */}
+            <circle
+                cx="324"
+                cy="40"
+                r="9"
+                fill="none"
+                stroke="#2F6FED"
+                stroke-width="1.2"
+                opacity="0.4"></circle>
+        </g>
+    </svg>
+
+    <svg
+        viewBox="0 0 720 96"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="hidden sm:block w-full h-auto overflow-visible"
+    >
+        {/* Schematic Grid Dots / Background Reference */}
+        <g opacity="0.35" class="text-line">
+            <circle cx="24" cy="24" r="1.5" fill="currentColor"></circle>
+            <circle cx="24" cy="48" r="1.5" fill="currentColor"></circle>
+            <circle cx="24" cy="72" r="1.5" fill="currentColor"></circle>
+
+            <circle cx="160" cy="24" r="1.5" fill="currentColor"></circle>
+            <circle cx="160" cy="72" r="1.5" fill="currentColor"></circle>
+
+            <circle cx="340" cy="48" r="1.5" fill="currentColor"></circle>
+
+            <circle cx="520" cy="48" r="1.5" fill="currentColor"></circle>
+            <circle cx="696" cy="48" r="1.5" fill="currentColor"></circle>
+        </g>
+
+        {/* Input labels in monospace */}
+        <g
+            class="font-mono text-[10px] tracking-wider fill-graphite select-none"
+            opacity="0.75"
+        >
+            <text x="24" y="14">LEGACY TOOLING / SLOW BUILDS</text>
+            <text x="510" y="32">OPTIMIZED PIPELINE</text>
+        </g>
+
+        {/* Tangled input paths - line color (#C7D0CE) */}
+        <g
+            stroke="#C7D0CE"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+        >
+            {/* Path 1: Top weave down across center, looping and converging */}
+            <path
+                d="M 24 24 C 90 24, 80 72, 150 72 C 220 72, 210 24, 280 24 C 330 24, 350 48, 380 48"
+                class="animate-schematic-trace"
+                style={{ animationDelay: "0ms" }}></path>
+
+            {
+                /* Path 2: Middle path with sharp friction bends resolving to center */
+            }
+            <path
+                d="M 24 48 C 70 48, 100 20, 140 36 C 180 52, 210 80, 260 64 C 310 48, 340 48, 380 48"
+                class="animate-schematic-trace"
+                style={{ animationDelay: "80ms" }}></path>
+
+            {/* Path 3: Bottom path looping up and joining convergence node */}
+            <path
+                d="M 24 72 C 90 72, 100 28, 170 28 C 240 28, 230 72, 290 72 C 340 72, 355 48, 380 48"
+                class="animate-schematic-trace"
+                style={{ animationDelay: "160ms" }}></path>
+
+            {/* Path 4: Secondary intermediate friction wire */}
+            <path
+                d="M 24 36 C 60 36, 120 78, 180 50 C 240 22, 280 48, 380 48"
+                class="animate-schematic-trace"
+                opacity="0.6"
+                style={{ animationDelay: "220ms" }}></path>
+        </g>
+
+        {/* Junction / Convergence Ring */}
+        <circle
+            cx="380"
+            cy="48"
+            r="4"
+            fill="#EEF1F0"
+            stroke="#C7D0CE"
+            stroke-width="1.5"
+            class="animate-schematic-trace"></circle>
+
+        {/* Resolved Straight Line - Signal Blue (#2F6FED) */}
+        <g class="animate-schematic-signal" style={{ animationDelay: "300ms" }}>
+            {/* Main clean pipeline stroke */}
+            <line
+                x1="384"
+                y1="48"
+                x2="696"
+                y2="48"
+                stroke="#2F6FED"
+                stroke-width="2.5"
+                stroke-linecap="round"></line>
+
+            {/* Clean terminal node */}
+            <circle cx="696" cy="48" r="4.5" fill="#2F6FED"></circle>
+
+            {/* Pulse ring indicator on terminal node */}
+            <circle
+                cx="696"
+                cy="48"
+                r="8"
+                fill="none"
+                stroke="#2F6FED"
+                stroke-width="1"
+                opacity="0.4"></circle>
+        </g>
+    </svg>
+</div>
