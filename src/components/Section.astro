@@ -1,0 +1,53 @@
+---
+interface Props {
+    /** Anchor id; also derives the aria-labelledby target. */
+    id: string;
+    /** Position in the page, rendered as the [ 0N ] counter. */
+    index: number;
+    title: string;
+    /** Defaults to alternating with the index, matching the page rhythm. */
+    tone?: "paper" | "paper-alt";
+    width?: "narrow" | "wide";
+    /** Last section on the page — drops the bottom rule. */
+    last?: boolean;
+}
+
+const {
+    id,
+    index,
+    title,
+    tone = index % 2 === 1 ? "paper-alt" : "paper",
+    width = "narrow",
+    last = false,
+} = Astro.props;
+
+const headingId = `heading-${id}`;
+---
+
+<section
+    id={id}
+    aria-labelledby={headingId}
+    class:list={[
+        "relative z-10 px-6 sm:px-8 py-20 sm:py-24",
+        tone === "paper-alt" ? "bg-paper-alt" : "bg-paper",
+        !last && "border-b border-line",
+    ]}
+>
+    <div
+        class:list={[
+            width === "wide" ? "max-w-5xl" : "max-w-[720px]",
+            "mx-auto space-y-10 sm:space-y-12",
+        ]}
+    >
+        <h2
+            id={headingId}
+            class="font-mono text-[13px] font-semibold tracking-widest text-ink uppercase flex items-center gap-3"
+        >
+            <span class="text-graphite font-normal"
+                >[ {String(index).padStart(2, "0")} ]</span
+            >{" "}{title}
+        </h2>
+
+        <slot />
+    </div>
+</section>

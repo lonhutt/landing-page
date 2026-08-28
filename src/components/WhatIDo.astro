@@ -1,67 +1,46 @@
-<section
-    id="what-i-do"
-    aria-labelledby="heading-what-i-do"
-    class="relative z-10 bg-paper-alt px-6 sm:px-8 py-20 sm:py-24 border-b border-line"
->
-    <div class="max-w-5xl mx-auto space-y-10 sm:space-y-12">
-        <h2
-            id="heading-what-i-do"
-            class="font-mono text-[13px] font-semibold tracking-widest text-ink uppercase flex items-center gap-3"
-        >
-            <span class="text-graphite font-normal">[ 01 ]</span> What I Do
-        </h2>
+---
+import Section from "./Section.astro";
 
-        <div
-            class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-line border-y border-line"
-        >
-            {/* Offering 1 */}
-            <div class="py-8 md:py-10 md:pr-8 lg:pr-10">
-                <h3
-                    class="font-display text-lg font-semibold text-ink leading-tight mb-3"
-                >
-                    Developer Productivity Audits &amp; Implementation
-                </h3>
-                <p class="text-sm sm:text-[15px] text-graphite leading-relaxed">
-                    Find where engineering time leaks out through slow builds,
-                    brittle environments, and manual toil, then fix it.
-                </p>
-            </div>
+const offerings = [
+    {
+        title: "Developer Productivity Audits & Implementation",
+        body: "Find where engineering time leaks out through slow builds, brittle environments, and manual toil, then fix it.",
+    },
+    {
+        title: "Build System & Toolchain Migrations",
+        body: "Move teams off legacy build tooling (Ant, Maven, aging Gradle setups) without stalling delivery mid-migration.",
+    },
+    {
+        title: "Internal Developer Platform Design & Delivery",
+        body: "Design and ship the internal tools, devcontainers, and platform surfaces engineers actually want to use, not the ones they’re forced to.",
+    },
+];
+---
 
-            {/* Offering 2 */}
-            <div class="py-8 md:py-10 md:px-8 lg:px-10">
-                <h3
-                    class="font-display text-lg font-semibold text-ink leading-tight mb-3"
-                >
-                    Build System &amp; Toolchain Migrations
-                </h3>
-                <p class="text-sm sm:text-[15px] text-graphite leading-relaxed">
-                    Move teams off legacy build tooling (Ant, Maven, aging
-                    Gradle setups) without stalling delivery mid-migration.
-                </p>
-            </div>
-
-            {/* Offering 3 */}
-            <div class="py-8 md:py-10 md:pl-8 lg:pl-10">
-                <h3
-                    class="font-display text-lg font-semibold text-ink leading-tight mb-3"
-                >
-                    Internal Developer Platform Design &amp; Delivery
-                </h3>
-                <p class="text-sm sm:text-[15px] text-graphite leading-relaxed">
-                    Design and ship the internal tools, devcontainers, and
-                    platform surfaces engineers actually want to use, not the
-                    ones they’re forced to.
-                </p>
-            </div>
-        </div>
-
-        <p
-            class="font-sans text-[13.5px] sm:text-[15px] text-graphite leading-relaxed max-w-[720px] italic"
-        >
-            While these are my main focus areas, I'm also open to broader senior
-            engineering work — like architecture reviews, technical due
-            diligence, or complex systems problems that don't fit a clean
-            category. If you have a unique challenge in mind, I'd love to chat.
-        </p>
+<Section id="what-i-do" index={1} title="What I Do" width="wide">
+    <div
+        class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-line border-y border-line"
+    >
+        {
+            offerings.map(({ title, body }) => (
+                <div class="py-8 md:py-10 md:px-8 lg:px-10 md:first:pl-0 md:last:pr-0">
+                    <h3 class="font-display text-lg font-semibold text-ink leading-tight mb-3">
+                        {title}
+                    </h3>
+                    <p class="text-sm sm:text-[15px] text-graphite leading-relaxed">
+                        {body}
+                    </p>
+                </div>
+            ))
+        }
     </div>
-</section>
+
+    <p
+        class="text-[13.5px] sm:text-[15px] text-graphite leading-relaxed max-w-[720px] italic"
+    >
+        While these are my main focus areas, I'm also open to broader senior
+        engineering work — like architecture reviews, technical due diligence,
+        or complex systems problems that don't fit a clean category. If you have
+        a unique challenge in mind, I'd love to chat.
+    </p>
+</Section>

@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    id?: string;
+    /** Adds the trailing arrow used by the hero CTA. */
+    showArrow?: boolean;
+}
+
+const { id, showArrow = false } = Astro.props;
+
+const calendarUrl = "https://calendar.app.google/PLBA15iRaBQv6PPo9";
+---
+
+<a
+    id={id}
+    href={calendarUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex items-center gap-2 px-7 py-3.5 bg-signal hover:bg-signal-hover active:bg-signal-active text-white font-medium text-[15px] sm:text-base rounded-md transition-all shadow-sm hover:shadow hover:-translate-y-px group"
+>
+    <Icon name="lucide:calendar" class="w-[18px] h-[18px]" />
+    <span>Book a call</span>
+    {
+        showArrow && (
+            <Icon
+                name="lucide:arrow-up-right"
+                class="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity ml-0.5"
+            />
+        )
+    }
+</a>

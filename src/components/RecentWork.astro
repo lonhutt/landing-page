@@ -1,61 +1,49 @@
-<section
-    id="recent-work"
-    aria-labelledby="heading-recent-work"
-    class="relative z-10 bg-paper px-6 sm:px-8 py-20 sm:py-24 border-b border-line"
->
-    <div class="max-w-[720px] mx-auto space-y-10 sm:space-y-12">
-        <h2
-            id="heading-recent-work"
-            class="font-mono text-[13px] font-semibold tracking-widest text-ink uppercase flex items-center gap-3"
-        >
-            <span class="text-graphite font-normal">[ 02 ]</span> Recent Work
-        </h2>
+---
+import Section from "./Section.astro";
 
-        <div class="space-y-8">
-            <article
-                class="border border-line/80 bg-paper/50 p-6 sm:p-8 space-y-5"
-            >
-                <div>
-                    <span
-                        class="font-mono text-[11px] font-bold uppercase tracking-wider text-graphite block mb-1.5"
-                    >
-                        Problem
-                    </span>
-                    <p class="text-ink text-[15px] leading-relaxed">
-                        A large SaaS engineering org’s monolith team had
-                        onboarding times measured in days, not hours.
-                    </p>
-                </div>
+const caseStudy = [
+    {
+        label: "Problem",
+        body: "A large SaaS engineering org’s monolith team had onboarding times measured in days, not hours.",
+    },
+    {
+        label: "What I did",
+        body: "Designed and built the team’s remote development environment from scratch.",
+    },
+    {
+        label: "Outcome",
+        body: "New engineers were productive same-day.",
+        accent: true,
+    },
+];
+---
 
-                <div class="h-px w-full bg-line/50"></div>
-
-                <div>
-                    <span
-                        class="font-mono text-[11px] font-bold uppercase tracking-wider text-graphite block mb-1.5"
-                    >
-                        What I did
-                    </span>
-                    <p class="text-ink text-[15px] leading-relaxed">
-                        Designed and built the team’s remote development
-                        environment from scratch.
-                    </p>
-                </div>
-
-                <div class="h-px w-full bg-line/50"></div>
-
-                <div>
-                    <span
-                        class="font-mono text-[11px] font-bold uppercase tracking-wider text-signal block mb-1.5"
-                    >
-                        Outcome
-                    </span>
-                    <p
-                        class="text-ink font-semibold text-[15px] leading-relaxed"
-                    >
-                        New engineers were productive same-day.
-                    </p>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
+<Section id="recent-work" index={2} title="Recent Work">
+    <article class="border border-line/80 bg-paper/50 p-6 sm:p-8 space-y-5">
+        {
+            caseStudy.map(({ label, body, accent }, i) => (
+                <>
+                    {i > 0 && <div class="h-px w-full bg-line/50" />}
+                    <div>
+                        <span
+                            class:list={[
+                                "font-mono text-[11px] font-bold uppercase tracking-wider block mb-1.5",
+                                accent ? "text-signal-ink" : "text-graphite",
+                            ]}
+                        >
+                            {label}
+                        </span>
+                        <p
+                            class:list={[
+                                "text-ink text-[15px] leading-relaxed",
+                                accent && "font-semibold",
+                            ]}
+                        >
+                            {body}
+                        </p>
+                    </div>
+                </>
+            ))
+        }
+    </article>
+</Section>
