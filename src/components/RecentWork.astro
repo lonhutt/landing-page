@@ -1,49 +1,89 @@
 ---
 import Section from "./Section.astro";
 
-const caseStudy = [
+const caseStudies = [
     {
-        label: "Problem",
-        body: "A large SaaS engineering org’s monolith team had onboarding times measured in days, not hours.",
+        title: "Remote Development Environment",
+        problem:
+            "Standing up a working environment for a multi-million-line Java monolith took a new engineer two days.",
+        action: "Designed and built the team’s remote development environment from scratch.",
+        outcome:
+            "New engineers were productive same-day. It became the company-wide standard, used by hundreds of engineers.",
     },
     {
-        label: "What I did",
-        body: "Designed and built the team’s remote development environment from scratch.",
+        title: "Cloud Services Launch",
+        problem:
+            "A database vendor needed to reach market as a managed AWS service, with no cloud delivery organization in place.",
+        action:
+            "Led development of the cloud services platform both products would run on, on a team of four.",
+        outcome: "Two products shipped as a service in six months.",
     },
     {
-        label: "Outcome",
-        body: "New engineers were productive same-day.",
-        accent: true,
+        title: "IDE Build Tooling",
+        problem:
+            "Getting the monolith into an IDE meant generating a partial project through custom plugins — a 20-to-60-minute ritual on top of a command-line build unstable enough that re-running a failed command was the accepted fix.",
+        action:
+            "Built IDE integrations for the in-house build system, then for Bazel after the migration, covering both VS Code and Eclipse.",
+        outcome:
+            "The build ran directly inside the editor for hundreds of engineers. The Bazel integrations are still maintained today.",
+    },
+    {
+        title: "Build System Migration",
+        problem:
+            "Forty modules on a stable Ant build carrying roughly ten times the build time it needed, tangled with circular dependencies and understood by only the one engineer who wrote it.",
+        action:
+            "Converted all forty modules to Maven, untangled the dependency graph, and established a standard release process.",
+        outcome:
+            "Build ownership moved from one engineer to the whole team, on a dependency graph they could finally reason about.",
+    },
+    {
+        title: "Automated Service Documentation",
+        problem:
+            "Twenty microservices had no reliable API documentation. Engineers read raw protobuf definitions or generated docs by hand from whatever they had checked out locally — and hit it daily when wiring up new calls between services.",
+        action:
+            "Built a generator producing docs from each service’s OpenAPI and protobuf definitions, discovering new services automatically so they were covered without anyone opting in.",
+        outcome:
+            "Docs became a build output rather than a maintenance task, and stayed current as the fleet grew.",
     },
 ];
 ---
 
 <Section id="recent-work" index={2} title="Recent Work">
-    <article class="border border-line/80 bg-paper/50 p-6 sm:p-8 space-y-5">
+    <div class="space-y-5 sm:space-y-6">
         {
-            caseStudy.map(({ label, body, accent }, i) => (
-                <>
-                    {i > 0 && <div class="h-px w-full bg-line/50" />}
-                    <div>
-                        <span
-                            class:list={[
-                                "font-mono text-[11px] font-bold uppercase tracking-wider block mb-1.5",
-                                accent ? "text-signal-ink" : "text-graphite",
-                            ]}
-                        >
-                            {label}
-                        </span>
-                        <p
-                            class:list={[
-                                "text-ink text-[15px] leading-relaxed",
-                                accent && "font-semibold",
-                            ]}
-                        >
-                            {body}
-                        </p>
+            caseStudies.map(({ title, problem, action, outcome }) => (
+                <article class="border border-line/80 bg-paper/50 p-6 sm:p-8">
+                    <h3 class="font-display text-lg font-semibold text-ink leading-tight pb-4 mb-5 border-b border-line/50">
+                        {title}
+                    </h3>
+                    <div class="space-y-4">
+                        {[
+                            { label: "Problem", body: problem },
+                            { label: "What I did", body: action },
+                            { label: "Outcome", body: outcome, accent: true },
+                        ].map(({ label, body, accent }) => (
+                            <div>
+                                <span
+                                    class:list={[
+                                        "font-mono text-[11px] font-bold uppercase tracking-wider block mb-1.5",
+                                        accent ? "text-signal-ink" : "text-graphite",
+                                    ]}
+                                >
+                                    {label}
+                                </span>
+                                <p
+                                    class:list={[
+                                        "text-ink text-[15px] leading-relaxed",
+                                        accent && "font-semibold",
+                                    ]}
+                                >
+                                    {body}
+                                </p>
+                            </div>
+                        ))}
                     </div>
-                </>
+                </article>
             ))
         }
-    </article>
+    </div>
 </Section>
