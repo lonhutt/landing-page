@@ -5,7 +5,7 @@ const caseStudies = [
     {
         title: "Remote Development Environment",
         problem:
-            "Standing up a working environment for a multi-million-line Java monolith took a new engineer two days.",
+            "Standing up a working development environment for a multi-million-line Java monolith took a new engineer two days.",
         action: "Designed and built the team’s remote development environment from scratch.",
         outcome:
             "New engineers were productive same-day. It became the company-wide standard, used by hundreds of engineers.",
@@ -14,16 +14,14 @@ const caseStudies = [
         title: "Cloud Services Launch",
         problem:
             "A database vendor needed to reach market as a managed AWS service, with no cloud delivery organization in place.",
-        action:
-            "Led development of the cloud services platform both products would run on, on a team of four.",
+        action: "Led development of the cloud services platform both products would run on, on a team of four.",
         outcome: "Two products shipped as a service in six months.",
     },
     {
         title: "IDE Build Tooling",
         problem:
             "Getting the monolith into an IDE meant generating a partial project through custom plugins — a 20-to-60-minute ritual on top of a command-line build unstable enough that re-running a failed command was the accepted fix.",
-        action:
-            "Built IDE integrations for the in-house build system, then for Bazel after the migration, covering both VS Code and Eclipse.",
+        action: "Built IDE integrations for the in-house build system, then for Bazel after the migration, covering both VS Code and Eclipse.",
         outcome:
             "The build ran directly inside the editor for hundreds of engineers. The Bazel integrations are still maintained today.",
     },
@@ -31,8 +29,7 @@ const caseStudies = [
         title: "Build System Migration",
         problem:
             "Forty modules on a stable Ant build carrying roughly ten times the build time it needed, tangled with circular dependencies and understood by only the one engineer who wrote it.",
-        action:
-            "Converted all forty modules to Maven, untangled the dependency graph, and established a standard release process.",
+        action: "Converted all forty modules to Maven, untangled the dependency graph, and established a standard release process.",
         outcome:
             "Build ownership moved from one engineer to the whole team, on a dependency graph they could finally reason about.",
     },
@@ -40,8 +37,7 @@ const caseStudies = [
         title: "Automated Service Documentation",
         problem:
             "Twenty microservices had no reliable API documentation. Engineers read raw protobuf definitions or generated docs by hand from whatever they had checked out locally — and hit it daily when wiring up new calls between services.",
-        action:
-            "Built a generator producing docs from each service’s OpenAPI and protobuf definitions, discovering new services automatically so they were covered without anyone opting in.",
+        action: "Built a generator producing docs from each service’s OpenAPI and protobuf definitions, discovering new services automatically so they were covered without anyone opting in.",
         outcome:
             "Docs became a build output rather than a maintenance task, and stayed current as the fleet grew.",
     },
@@ -66,7 +62,9 @@ const caseStudies = [
                                 <span
                                     class:list={[
                                         "font-mono text-[11px] font-bold uppercase tracking-wider block mb-1.5",
-                                        accent ? "text-signal-ink" : "text-graphite",
+                                        accent
+                                            ? "text-signal-ink"
+                                            : "text-graphite",
                                     ]}
                                 >
                                     {label}

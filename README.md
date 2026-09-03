@@ -1,6 +1,6 @@
 # Lon Hutt — Portfolio & Consulting Website
 
-This is the portfolio and consulting website for **Lon Hutt**, Principal Developer Productivity & Internal Platforms Consultant.
+This is the portfolio and consulting website for **Lon Hutt**, Principal Consultant — Platform Engineering & Developer Experience.
 
 **Production site: [lonhutt.com](https://lonhutt.com)**
 
@@ -24,7 +24,6 @@ The site is built with modern, ultra-fast web tech to showcase technical experti
 ├── public/
 │   ├── favicon.ico       # Fallback favicon
 │   ├── favicon.svg       # SVG favicon
-│   ├── og-image.png      # 1200x630 social share card
 │   └── robots.txt        # Crawler policy
 ├── src/
 │   ├── components/

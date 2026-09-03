@@ -3,22 +3,21 @@ import { Font } from "astro:assets";
 
 import "../styles/global.css";
 
-const title =
-    "Lon Hutt — Developer Productivity & Internal Platforms Consultant";
+const title = "Lon Hutt — Platform Engineering & Developer Experience";
 const description =
-    "I'm a Principal engineer who fixes broken developer experience — I speed up your builds, migrate you off legacy tooling, and build the internal platforms your engineers actually want to use.";
+    "I'm a Principal Consultant who fixes broken developer experience — I speed up your builds, migrate you off legacy tooling, and build the internal platforms your engineers actually want to use.";
 const socialDescription =
     "I speed up your builds, migrate you off legacy tooling, and build the internal platforms your engineers actually want to use.";
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL("/og-image.png", Astro.site);
 
 const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Lon Hutt",
     url: Astro.site?.href,
-    jobTitle: "Principal Engineer",
+    jobTitle:
+        "Principal Consultant — Platform Engineering & Developer Experience",
     email: "mailto:lon@lonhutt.com",
     description: socialDescription,
     knowsAbout: [
@@ -53,15 +52,7 @@ const personSchema = {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonical} />
         <meta property="og:site_name" content="Lon Hutt" />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta
-            property="og:image:alt"
-            content="Lon Hutt — Developer Productivity & Internal Platforms Consultant"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:card" content="summary" />
 
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
